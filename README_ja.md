@@ -4,7 +4,7 @@
 <!--In this tutorial you'll learn how to create a globe visualization of places you've been to. Something like this pin globe (the style is all up to you, you can get creative and style it totally different):-->
 このチュートリアルでは、訪問した事がある場所を地球儀にピンで表示する方法を学んでもらいます（地図のスタイルはあなた次第で、より創造的なスタイルにすることも可能です）。
 
-※ このドキュメントは、[Tutorial - Getting started with web 3D using ArcGIS API for JavaScript](https://github.com/RalucaNicola/get-started-arcgis-js-api) を翻訳したもので、TypeScript の linter でtslint を利用しているなど、一部、現在は非推奨の古い情報が含まれます。
+※ このドキュメントは、[Tutorial - Getting started with web 3D using ArcGIS API for JavaScript](https://github.com/RalucaNicola/get-started-arcgis-js-api) を翻訳したもので、TypeScript の linter でtslint を利用しているなど、一部、現在は非推奨の古い情報が含まれます。また、この手順は「AMD」モジュールでのTypeScript を使ったアプリケーションの作成手順です。「ES」モジュールでのTypeScript を使ったアプリケーションの作成手順は、[Setting up your TypeScript environment](https://developers.arcgis.com/javascript/latest/typescript-setup/) をご参照ください。
 
 [![screenshot](./images/screenshot.png "Click to see app in action")](https://ralucanicola.github.io/get-started-arcgis-js-api/)
 
@@ -62,7 +62,7 @@ P.S. geojson データを作成する場合、このweb アプリケーション
 <!--Create the folder for your project and inside it in the console run `npm init`. Fill up project name, keywords, author, etc.
 This will generate a `package.json` file.-->
 プロジェクト用のフォルダーを作成し、そのフォルダー下のコンソールで `npm init` コマンドを実行し、対話的にプロジェクト名 (project name), キーワード (keywords), 著者 (author), 等の情報を入力します。
-これにより `package.json` ファイルが作成されます。
+これにより `package.json` ファイルが作成されます（対話的な入力が面倒な場合は、`npm init -y` でデフォルト設定で作成することも可能です）。
 
 <!--### Set up a git repo-->
 ### git repo を設定
@@ -94,7 +94,7 @@ Create an `index.html` file and an `app` folder that will store the JS/TS code a
 - app -> main.js
 - style -> main.css
 -->
-`index.html` ファイル、JS/TS コードを格納する`app` フォルダーと main.js ファイル、CSS を格納する`style` フォルダーと main.css ファイル を作成します。
+`index.html` ファイル、JS/TS コードを格納する`app` フォルダーと main.js ファイル、CSS を格納する`style` フォルダーと main.css ファイル を作成します（メモ：ファイル作成をVSCodeのターミナルから行う場合、Unix系環境は「touch」コマンド、WindowsのPowerShell環境の場合は「New-Item」コマンドで行えます）。
 
 - index.html
 - app -> main.js
@@ -217,11 +217,11 @@ Web サーバー をセットアップするために、`browser-sync` をイン
 
 `npm install --save-dev browser-sync`
 
-`npm-run-all` をインストールすると、typescript のコンパイラと並行して、Web サーバー が変更を監視するようになります。
+typescript のコンパイラと並行して、Web サーバー が変更を監視するようにするために、`npm-run-all` をインストールします。
 
 `npm install --save-dev npm-run-all`
 
-`scripts` プロパティ を次のように変更します。:
+package.json の`scripts` プロパティ を次のように変更します。:
 
 ```js
 "scripts": {
@@ -511,3 +511,8 @@ You can check my project at [https://ralucanicola.github.io/get-started-arcgis-j
 -->
 [ここに](https://pages.github.com/) どのように行うかの、ステップ バイ ステップのチュートリアルがあります。基本的には、あなたのリポジトリの Settings タブで GitHub Pages までスクロールし、master ブランチをソースとして選択し Save を押す必要があります。
 Raluca Nicola さんのプロジェクトは [https://ralucanicola.github.io/get-started-arcgis-js-api/](https://ralucanicola.github.io/get-started-arcgis-js-api/.) で確認できます。
+
+## ステップ 5' - ローカルのWeb サーバーを起動して、デバッグする
+開発時に、ローカルのWeb サーバーを起動するには、ターミナルで`npm start` のコマンドを実行します。
+
+
